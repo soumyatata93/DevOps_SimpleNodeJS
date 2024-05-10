@@ -14,3 +14,13 @@ phases:
     commands:
       aws s3 cp --recursive ./build s3://simple-react-s3
 
+artifacts:
+  files:
+    - '**/*'
+  base-directory : "build"
+
+cache:
+  paths:
+    -'node_modules/**/*'
+
+
