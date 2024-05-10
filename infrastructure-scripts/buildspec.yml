@@ -12,5 +12,5 @@ phases:
       - npm run build   # Build the React project
   post_build:
     commands:
-      aws s3 cp --recursive ./build s3://sample-react-project-bucket
+      aws s3 cp --recursive ./build s3://simple-react-s3
 
