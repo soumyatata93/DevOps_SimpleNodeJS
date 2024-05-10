@@ -102,7 +102,7 @@ class Phone extends React.Component {
 }
 
 
-class sms extends React.Component {
+class Sms extends React.Component {
     constructor () {
       super();
       this.state = {
@@ -158,11 +158,9 @@ class sms extends React.Component {
                       <button>Check</button>
                   </form>
                   <Check onClick={this.finalSubmit} display={this.state.display} person={this.state.person} portal={this.state.portal} vacancy={this.state.vacancy}  branch={this.state.branch}  />
-
-                  
               </div>
           )
       }
   }
 
-export default sms
+export default Sms
