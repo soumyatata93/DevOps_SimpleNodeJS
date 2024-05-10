@@ -17,7 +17,7 @@ In Permissions: Unblock public access
 
 /*Resource is bucket name*/
     Add Bucket policy : 
-    {
+   ` {
     "Version": "2012-10-17",
     "Statement": [
         {
@@ -28,5 +28,14 @@ In Permissions: Unblock public access
             "Resource": "arn:aws:s3:::simple-react-s3/*" 
         }
     ]
-}
+}`
 2.Create build using code build
+  **Source:**Github
+  **Build Spec:** Use a **buildspec** file: give **yml** file name which in github
+  **Artifact**: S3
+  Add policies in IAM for build service role in read -get object and write -put object
+3 . Create Pipeline
+    **Source :** Github 
+    In Triggers branches select as `main` branch
+    **Code Build:** select created code build in the list
+    **Code Deploy** : Select S3 Bucket
