@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import sms from './sms';
 import './App.css';
 
 export default function App() {
@@ -30,6 +31,10 @@ export default function App() {
       <h1>{count}</h1>
       <button onClick={increment}>Increment</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <button onClick={decrement}>Decrement</button>
+
+
+      <Sms/>
+
     </div>
   );
 }
