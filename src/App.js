@@ -1,21 +1,35 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { useState } from "react";
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to AWS React</h1>
-        </header>
-        <p className="App-intro">
-           Test Project 
-        </p>
-      </div>
-    );
-  }
-}
+export default function App() {
+  const [count, setCount] = useState(0); // useState returns a pair. 'count' is the current state. 'setCount' is a function we can use to update the state.
 
-export default App;
+  function increment() {
+    //setCount(prevCount => prevCount+=1);
+    setCount(function (prevCount) {
+      return (prevCount += 1);
+    });
+  }
+
+  function decrement() {
+    setCount(function (prevCount) {
+      if (prevCount > 0) {
+        return (prevCount -= 1); 
+      } else {
+        return (prevCount = 0);
+      }
+    });
+  }
+
+  return (
+    <div className="App">
+      <header className="App-header">
+          
+          <h1 className="App-title">Counter App</h1>
+        </header>
+      <h1>{count}</h1>
+      <button onClick={increment}>Increment</button>&nbsp;&nbsp;&nbsp;
+      <button onClick={decrement}>Decrement</button>
+    </div>
+  );
+}
