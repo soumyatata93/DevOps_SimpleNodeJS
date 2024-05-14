@@ -1,0 +1,24 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 21
+    commands:
+      - npm install     # Install project dependencies
+      # - npm update
+  build:
+    commands:
+      - npm run build   # Build the React project
+  post_build:
+    commands:
+      aws s3 cp --recursive ./build s3://sample-project1-s3
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory : "build"
+
+cache:
+  paths:
+    -'node_modules/**/*'
