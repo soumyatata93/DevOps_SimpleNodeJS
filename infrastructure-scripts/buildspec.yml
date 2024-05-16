@@ -9,7 +9,7 @@ phases:
       # - npm update
   build:
     commands:
-      - npm build   # Build the React project
+      - npm run-script build   # Build the React project
   post_build:
     commands:
       aws s3 cp --recursive ./build s3://ec2-s3-org-hrsms
