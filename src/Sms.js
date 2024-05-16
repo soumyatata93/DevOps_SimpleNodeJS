@@ -50,7 +50,7 @@ const Person = function(props){
 const Check = function(props){
 	message = 'Hi, its '+props.person+' from Dunster House Ltd and I have come across your CV on '+props.portal+'. I currently have a job vacancy for a '+props.vacancy+' that you may be interested in which is based at our '+props.branch+' Branch. I have also sent you an e-mail regarding this position so please check out your mail boxes. I have already called you from telephone number 01234 272445 and will attempt to call you again later on today,  alternatively you can return my call on 01234 272445 or e-mail email me at hr@dunsterhouse.co.uk I look forward to speaking to you. To find out more about us go to www.dunsterhouse.co.uk Kind Regards.(For and on behalf of Dunster House Ltd)';
 
-	if(props.display == 'yes')
+	if(props.display === 'yes')
 	{
 		return (
 				<div class="main-content">
@@ -78,7 +78,7 @@ class Phone extends React.Component {
 	}
 	handleSubmit = (event) => {
 		event.preventDefault();
-		if(this.state.term.length == 11){
+		if(this.state.term.length === 11){
 			this.setState({
 				term: '07',
 				items: [...this.state.items,this.state.term]
@@ -132,7 +132,7 @@ class Sms extends React.Component {
           xhr.open('POST', 'https://dunsterhouse.co.uk/cron/sms/get_post.php');
           xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
           xhr.onload = function() {
-              if (xhr.status === 200 && xhr.responseText !== 'ok') {
+              if (xhr.status === 200 && xhr.responseText !=== 'ok') {
                    alert('Something went wrong. ');
               }
               else if (xhr.status !== 200) {
